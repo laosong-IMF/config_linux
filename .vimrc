@@ -5,15 +5,18 @@ set nu!
 
 "用空格代替tab
 set expandtab
-"一个tab是4个字符 
+"一个tab是4个字符
 set tabstop=4
 "缩进的字符个数
 set shiftwidth=4
 "自动缩进
 set autoindent
 
+":N    Place case labels N characters from the indent of the switch().
+set cinoptions+=:0
+
 "set guifont=Consolas:h13:cANSI
-set textwidth=0
+set textwidth=78
 set formatoptions+=t
 set wrap
 "set lines=44 columns=125
@@ -21,10 +24,10 @@ set wrap
 set encoding=utf-8
 "fileencodings需要注意顺序，前面的字符集应该比后面的字符集大
 set fileencodings=ucs-bom,utf-8,chinese,gbk
-let $LANG = 'en'  "set message language  
+let $LANG = 'en'  "set message language
 set langmenu=en   "set menu's language of gvim. no spaces beside '='
 
-"语法高亮 
+"语法高亮
 syntax on
 
 set hlsearch
@@ -36,13 +39,13 @@ set tags=tags;/
 let mapleader = ","
 set showcmd
 
-"执行 Vim 缺省提供的 .vimrc 文件的示例，包含了打开语法加亮显示等最常用的功能 
+"执行 Vim 缺省提供的 .vimrc 文件的示例，包含了打开语法加亮显示等最常用的功能
 "source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 "设置鼠标运行模式为WINDOWS模式
 "behave mswin
 
-"缺省不产生备份文件 
+"缺省不产生备份文件
 set nobackup
 "no undo file .un~
 set noundofile
@@ -123,6 +126,8 @@ let g:ctrlp_cmd = 'CtrlP'
 Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --vimgrep'
 cnoreabbrev ag Ack
+
+Bundle 'bronson/vim-trailing-whitespace'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
